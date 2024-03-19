@@ -137,6 +137,7 @@ class _SignupState extends State<Signup> {
                           prefs3.setString("u_name", U_name);
                           prefs4.setString("password", Pass);
                           prefs5.setString("Contact", Contact);
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Register Successfully")));
                         },
                         style: ElevatedButton.styleFrom(
                             shape: const RoundedRectangleBorder(
