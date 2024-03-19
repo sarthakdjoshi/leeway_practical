@@ -91,9 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           String enteredPass = pass.text;
 
                           if (enteredEmail == storedEmail && enteredPass == storedPass) {
-                            Navigator.push(context, MaterialPageRoute(builder:  (context) =>Home(),));
+                            Navigator.push(context, MaterialPageRoute(builder:  (context) =>const Home(),));
                           } else {
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Failed")));
+                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Login Failed")));
                           }
                         },
                         style: ElevatedButton.styleFrom(

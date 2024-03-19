@@ -35,9 +35,9 @@ class _HomeState extends State<Home> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("Login Name = $namevalue",style: TextStyle(fontSize: 20,fontStyle: FontStyle.italic),),
-                SizedBox(height: 8,),
-                Text("Login email = $emailvalue",style: TextStyle(fontSize: 20,fontStyle: FontStyle.italic),),
+                Text("Login Name = $namevalue",style: const TextStyle(fontSize: 20,fontStyle: FontStyle.italic),),
+                const SizedBox(height: 8,),
+                Text("Login email = $emailvalue",style: const TextStyle(fontSize: 20,fontStyle: FontStyle.italic),),
               ],
             ),
           ),
