@@ -28,12 +28,19 @@ class _HomeState extends State<Home> {
 
       ),
       body:  Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text("Login Name=$namevalue",style: TextStyle(fontSize: 20),),
-            Text("Login email=$emailvalue",style: TextStyle(fontSize: 20),),
-          ],
+        child: Card(
+          color: Colors.grey,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text("Login Name = $namevalue",style: TextStyle(fontSize: 20,fontStyle: FontStyle.italic),),
+                SizedBox(height: 8,),
+                Text("Login email = $emailvalue",style: TextStyle(fontSize: 20,fontStyle: FontStyle.italic),),
+              ],
+            ),
+          ),
         ),
       ),
     );

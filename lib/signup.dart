@@ -9,16 +9,16 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-  var name = TextEditingController();
-  var email = TextEditingController();
-  var pass = TextEditingController();
-  var u_name = TextEditingController();
-  var mobile = TextEditingController();
-  var namevalue = "No Value";
-  var emailvalue = "No Value";
-  var passvalue = "No Value";
-  var u_namevalue = "No Value";
-  var contactvalue = "No Value";
+  var nameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passController = TextEditingController();
+  var userNameController = TextEditingController();
+  var mobileController = TextEditingController();
+  var nameValue = "No Value";
+  var emailValue = "No Value";
+  var passValue = "No Value";
+  var userNameValue = "No Value";
+  var contactValue = "No Value";
 
   Future<void> getValue() async {
     var prefs = await SharedPreferences.getInstance();
@@ -26,16 +26,16 @@ class _SignupState extends State<Signup> {
     var prefs3 = await SharedPreferences.getInstance();
     var prefs4 = await SharedPreferences.getInstance();
     var prefs5 = await SharedPreferences.getInstance();
-    var getname = prefs.getString("name");
-    var getemail = prefs2.getString("email");
-    var getu_name = prefs3.getString("u_name");
-    var getpass = prefs4.getString("password");
-    var getcontact = prefs5.getString("Contact");
-    namevalue = getname!;
-    emailvalue = getemail!;
-    u_namevalue = getu_name!;
-    passvalue = getpass!;
-    contactvalue = getcontact!;
+    var getName = prefs.getString("name");
+    var getEmail = prefs2.getString("email");
+    var getUserName = prefs3.getString("u_name");
+    var getPass = prefs4.getString("password");
+    var getContact = prefs5.getString("Contact");
+    nameValue = getName!;
+    emailValue = getEmail!;
+    userNameValue = getUserName!;
+    passValue = getPass!;
+    contactValue = getContact!;
     setState(() {});
   }
 
@@ -65,7 +65,7 @@ class _SignupState extends State<Signup> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   TextField(
-                    controller: name,
+                    controller: nameController,
                     decoration: const InputDecoration(
                         hintText: "Enter Name",
                         border: OutlineInputBorder(
@@ -75,7 +75,7 @@ class _SignupState extends State<Signup> {
                     height: 10,
                   ),
                   TextField(
-                    controller: email,
+                    controller: emailController,
                     decoration: const InputDecoration(
                         hintText: "Enter email",
                         border: OutlineInputBorder(
@@ -85,7 +85,7 @@ class _SignupState extends State<Signup> {
                     height: 10,
                   ),
                   TextField(
-                    controller: pass,
+                    controller: passController,
                     obscureText: true,
                     obscuringCharacter: "*",
                     decoration: const InputDecoration(
@@ -97,7 +97,7 @@ class _SignupState extends State<Signup> {
                     height: 10,
                   ),
                   TextField(
-                    controller: u_name,
+                    controller:userNameController,
                     decoration: const InputDecoration(
                         hintText: "Enter Username",
                         border: OutlineInputBorder(
@@ -107,7 +107,7 @@ class _SignupState extends State<Signup> {
                     height: 10,
                   ),
                   TextField(
-                    controller: mobile,
+                    controller: mobileController,
                     maxLength: 10,
                     keyboardType: TextInputType.number,
                     decoration: const InputDecoration(
@@ -122,22 +122,22 @@ class _SignupState extends State<Signup> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () async {
-                          var Name = name.text.toString();
-                          var Email = email.text.toString();
-                          var U_name = u_name.text.toString();
-                          var Pass = pass.text.toString();
-                          var Contact = mobile.text.toString();
+                          var name = nameController.text.toString();
+                          var email = emailController.text.toString();
+                          var username = userNameController.text.toString();
+                          var pass = passController.text.toString();
+                          var contact = mobileController.text.toString();
                           var prefs = await SharedPreferences.getInstance();
                           var prefs2 = await SharedPreferences.getInstance();
                           var prefs3 = await SharedPreferences.getInstance();
                           var prefs4 = await SharedPreferences.getInstance();
                           var prefs5 = await SharedPreferences.getInstance();
-                          prefs.setString("name", Name);
-                          prefs2.setString("email", Email);
-                          prefs3.setString("u_name", U_name);
-                          prefs4.setString("password", Pass);
-                          prefs5.setString("Contact", Contact);
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Register Successfully")));
+                          prefs.setString("name", name);
+                          prefs2.setString("email", email);
+                          prefs3.setString("u_name", username);
+                          prefs4.setString("password", pass);
+                          prefs5.setString("Contact", contact);
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Register Successfully")));
                         },
                         style: ElevatedButton.styleFrom(
                             shape: const RoundedRectangleBorder(

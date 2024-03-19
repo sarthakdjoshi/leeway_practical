@@ -110,15 +110,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: <Widget>[
                       const Text(
                         "Don't Have Account?",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 15),
                       ),
                       const SizedBox(
                         width: 10,
                       ),
                       CupertinoButton(
                           child: const Text(
-                            "Create A Account",
-                            style: TextStyle(fontSize: 20),
+                            "Create An Account",
+                            style: TextStyle(fontSize: 15),
                           ),
                           onPressed: () {
                             Navigator.push(
